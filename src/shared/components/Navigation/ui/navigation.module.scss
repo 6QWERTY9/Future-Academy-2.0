@@ -3,16 +3,21 @@
 .navigation {
     width: 100%;
 
+    // Основной список навигации
     .navigation__list.header {
         display: flex;
+        flex-direction: row;
         column-gap: 4rem;
         align-items: center;
 
+        // Светлая тема (Light Mode)
         &.light {
             .link {
+                // Применяем миксин для базовых параметров текста
                 @include text-style(1.4rem, 450, #000000, 100%, 0%);
             }
             .link_wrapper {
+                // Добавляем иконку перед первым пунктом меню
                 &:first-child {
                     display: flex;
                     align-items: center;
@@ -25,6 +30,8 @@
                 }
             }
         }
+
+          // Темная тема (Dark Mode)
         &.dark {
             .link {
                 @include text-style(1.4rem, 450, #FFFFFF, 100%, 0%);
@@ -39,6 +46,7 @@
                         content: url('@assets/nav-icon.svg');
                         width: 20px;
                         height: 15px;
+                        // Инвертируем цвета иконки, чтобы она стала белой на темном фоне
                         filter: brightness(0) invert(1);
                     }
                 }

@@ -1,7 +1,7 @@
 import type { INavProps } from "@shared/components/Navigation/model/types";
 
 export const headerNavData: Omit<INavProps, 'headerTheme'> = {
-    linkType: "footer",
+    linkType: "header",
     links: [
         {
             text: 'Все курсы',

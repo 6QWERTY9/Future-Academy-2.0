@@ -7,9 +7,15 @@ import type { INavProps } from "../model/types";
 import css from './navigation.module.scss';
 
 
+
+/**
+ * Универсальный компонент навигации для Header и Footer.
+ * Поддерживает смену тем и различных типов ссылок.
+**/
 export const Navigation: React.FC<INavProps> = ({ headerTheme = 'light', linkType, links }) => {
 
-  
+  // Гарантируем наличие уникального ID для каждого элемента списка.
+  // Используем useMemo, чтобы ID не перегенерировались при каждом рендере.
   const itemsWithIds = useMemo(() => {
     return links.map(item => ({
       ...item,
