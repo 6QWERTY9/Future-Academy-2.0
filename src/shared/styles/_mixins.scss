@@ -1,0 +1,55 @@
+@use '@styles/vars' as *;
+
+
+/// Создает эффект градиентного свечения (тени) под элементом.
+/// Использует псевдоэлемент и 3D-трансформацию, чтобы тень была под контентом.
+/// @param {String} $gradient - Цвета градиента (напр. linear-gradient(...))
+/// @param {Length} $horizontal-offset [10px] - Смещение по горизонтали
+/// @param {Length} $vertical-offset [20px] - Смещение по вертикали
+/// @param {Length} $blur [10px] - Сила размытия тени
+/// @param {Length} $spread [10px] - На сколько тень больше/меньше основного элемента
+/// @param {Length} $border-radius [0px] - Радиус скругления (должен совпадать с родителем)
+@mixin shadow-gradient($gradient: $gradient-orange-to-blue, $horizontal-offset: 10px, $vertical-offset: 20px, $blur: 10px, $spread: 10px, $border-radius: 0px) {
+    position: relative;
+    transform-style: preserve-3d;
+
+    border-radius: $border-radius;
+
+    &::before {
+        content: '';
+        position: absolute;
+
+        // Подсказываем браузеру оптимизировать анимацию/рендер фильтра
+        will-change: transform, filter;
+
+        // Инвертируем spread, чтобы положительное число расширяло тень наружу
+        inset: calc($spread * -1);
+
+        background: $gradient;
+
+        filter: blur($blur);
+
+        // Смещаем вглубь на -1px, чтобы не перекрывать текст/контент
+        transform: translate3d($horizontal-offset,$vertical-offset, -1px);
+
+        border-radius: inherit;
+        pointer-events: none; // Тень не должна мешать кликам
+    }
+}
+
+
+/// Базовый миксин для стилизации текста.
+/// @param {Length} $font-size [1rem] - Размер шрифта
+/// @param {Number} $font-weight [400] - Насыщенность шрифта
+/// @param {Color} $color [#000] - Цвет текста
+/// @param {Percentage|Length} $line-height [100%] - Межстрочный интервал
+/// @param {Length} $letter-spacing [0%] - Межсимвольный интервал
+@mixin text-style($font-size: 1rem, $font-weight: 400, $color: #000, $line-height: 100%, $letter-spacing: 0%) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+
+    color: $color;
+}
