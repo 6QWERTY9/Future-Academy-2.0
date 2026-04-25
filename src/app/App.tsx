@@ -1,10 +1,11 @@
-
+import { Header } from "@shared/components/Header"
+import { BrowserRouter } from "react-router-dom"
 
 function App() {
   return (
-    <>
-    init
-    </>
+    <BrowserRouter>
+      <Header theme='dark'/>
+    </BrowserRouter>
   )
 }
 

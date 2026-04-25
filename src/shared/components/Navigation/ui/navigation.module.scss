@@ -1,0 +1,61 @@
+@use '@styles/mixins' as *;
+
+.navigation {
+    width: 100%;
+
+    .navigation__list.header {
+        display: flex;
+        column-gap: 4rem;
+        align-items: center;
+
+        &.light {
+            .link {
+                @include text-style(1.4rem, 450, #000000, 100%, 0%);
+            }
+            .link_wrapper {
+                &:first-child {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    &::before {
+                        content: url('@assets/nav-icon.svg');
+                        width: 20px;
+                        height: 15px;
+                    }
+                }
+            }
+        }
+        &.dark {
+            .link {
+                @include text-style(1.4rem, 450, #FFFFFF, 100%, 0%);
+            }
+
+            .link_wrapper {
+                &:first-child {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    &::before {
+                        content: url('@assets/nav-icon.svg');
+                        width: 20px;
+                        height: 15px;
+                        filter: brightness(0) invert(1);
+                    }
+                }
+            }
+        }
+    }
+
+    .navigation__list.footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 0.5rem;
+        .link {
+            &.footer {
+                @include text-style(1.4rem, 400, #FFFFFF, 34px, 0%);
+            }
+        }
+    }
+
+}
