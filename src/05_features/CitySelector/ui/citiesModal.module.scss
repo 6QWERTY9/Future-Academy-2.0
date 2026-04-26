@@ -1,0 +1,53 @@
+@use '@styles/mixins' as *;
+@use '@styles/vars' as *;
+
+
+.cities_modal {
+    width: 50%;
+    height: 250px;
+
+    border: 1px solid gray;
+    border-radius: 6px;
+    background: rgb(245, 245, 245);
+
+    transform: translateY(55px);
+    .cities_modal__content {
+        width: 100%;
+        height: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 10px;
+        align-items: center;
+        justify-items: center;
+
+        .cities_modal_btn {
+            @include text-style(14, 500, #000000, 1);
+            border: none;
+            cursor: pointer;
+            width: max-content;
+            height: max-content;
+            transition: width 250ms ease-in-out;
+            position: relative;
+            &::after {
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    background: $gradient-orange-to-blue;
+                    border-radius: 2px;
+                    position: absolute;
+                    left: 0;
+                    bottom: -2px;
+
+                    /* Настройка анимации */
+                    transform: scaleX(0);            // Изначально линия сжата до нуля
+                    transform-origin: left center;   // Точка опоры слева (чтобы росла вправо)
+                    transition: transform 0.3s ease; // Плавно анимируем трансформацию
+            }
+
+            &:hover::after {
+                transform: scaleX(1); 
+            }
+        }
+    }
+}

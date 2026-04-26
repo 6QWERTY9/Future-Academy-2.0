@@ -1,0 +1,28 @@
+import type { ICitySelectorProps } from "./types";
+
+export const cities: ICitySelectorProps[] = [
+    { id: 1, name: 'Москва', slug: 'moscow' },
+    { id: 2, name: 'Санкт-Петербург', slug: 'spb' },
+    { id: 3, name: 'Новосибирск', slug: 'novosibirsk' },
+    { id: 4, name: 'Екатеринбург', slug: 'ekaterinburg' },
+    { id: 5, name: 'Казань', slug: 'kazan' },
+    { id: 6, name: 'Нижний Новгород', slug: 'nizhny-novgorod' },
+    { id: 7, name: 'Челябинск', slug: 'chelyabinsk' },
+    { id: 8, name: 'Самара', slug: 'samara' },
+    { id: 9, name: 'Омск', slug: 'omsk' },
+    { id: 10, name: 'Ростов-на-Дону', slug: 'rostov-on-don' },
+    { id: 11, name: 'Уфа', slug: 'ufa' },
+    { id: 12, name: 'Красноярск', slug: 'krasnoyarsk' },
+    { id: 13, name: 'Воронеж', slug: 'voronezh' },
+    { id: 14, name: 'Пермь', slug: 'perm' },
+    { id: 15, name: 'Волгоград', slug: 'volgograd' },
+    { id: 16, name: 'Краснодар', slug: 'krasnodar' },
+    { id: 17, name: 'Саратов', slug: 'saratov' },
+    { id: 18, name: 'Тюмень', slug: 'tyumen' },
+    { id: 19, name: 'Тольятти', slug: 'tolyatti' },
+    { id: 20, name: 'Ижевск', slug: 'izhevsk' },
+    { id: 21, name: 'Барнаул', slug: 'barnaul' },
+    { id: 22, name: 'Ульяновск', slug: 'ulyanovsk' },
+    { id: 23, name: 'Иркутск', slug: 'irkutsk' },
+    { id: 24, name: 'Хабаровск', slug: 'khabarovsk' },
+];

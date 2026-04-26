@@ -6,6 +6,7 @@ import css from './header.module.scss';
 import { headerNavData } from '../model/data';
 import type { INavProps } from '@shared/components/Navigation/model/types';
 import { Navigation } from '@shared/components/Navigation';
+import { CitySelector } from '@features/CitySelector';
 
 
 export default function Header({theme='light'}: IHeaderProps) {
@@ -18,6 +19,7 @@ export default function Header({theme='light'}: IHeaderProps) {
       <div className={css.header__content}>
         <Logo width={100} height={70} className={clsx(css.logo, css[theme])}/>
         <Navigation {...navProps}/>
+        <CitySelector headerTheme={theme}/>
       </div>
     </header>
   )
