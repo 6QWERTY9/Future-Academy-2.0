@@ -21,18 +21,18 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
 
-        /*Alias*/
+    /*Alias*/
     "paths": {
-      "@app/*": ["./src/app/*"],
-      "@entities/*": ["./src/entities/*"],
-      "@features/*": ["./src/features/*"],
-      "@shared/*": ["./src/shared/*"],
-      "@pages/*": ["./src/pages/*"],
-      "@widgets/*": ["./src/widgets/*"],
-      "@processes/*": ["./src/processes/*"],
-      "@styles/*": ["./src/shared/styles/*"],
-      "@assets/*": ["./src/assets/*"]
-    },
+      "@app/*": ["./src/01_app/*"],
+      "@processes/*": ["./src/02_processes/*"],
+      "@pages/*": ["./src/03_pages/*"],
+      "@widgets/*": ["./src/04_widgets/*"],
+      "@features/*": ["./src/05_features/*"],
+      "@entities/*": ["./src/06_entities/*"],
+      "@shared/*": ["./src/07_shared/*"],
+      "@assets/*": ["./src/07_shared/assets/*"], // Перенеси assets в shared, так правильнее
+      "@styles/*": ["./src/07_shared/styles/*"]  // И стили тоже
+    }
   },
   "include": ["src"]
 }

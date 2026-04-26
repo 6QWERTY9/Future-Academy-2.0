@@ -1,4 +1,4 @@
-import { Header } from "@shared/components/Header"
+import { Header } from "@widgets/Header"
 import { BrowserRouter } from "react-router-dom"
 
 function App() {
