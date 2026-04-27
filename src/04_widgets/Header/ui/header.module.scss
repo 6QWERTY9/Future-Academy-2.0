@@ -1,9 +1,94 @@
-// .logo {
-//     filter: brightness(0) invert(1);
-// }
+
+
+@use '@styles/vars' as *;
+@use '@styles/mixins' as *;
 
 .header {
     width: 100%;
     height: 110px;
     position: relative;
+
+    // Модификатор темной темы: инвертируем логотип для контраста
+    &.dark {
+        background: $dark-navy-blue;
+
+        .logo {
+            filter: brightness(0) invert(1);
+        }
+
+        .header__content {
+            .header_actions {
+                .contact_us {
+                    @include text-style(1.6rem, 500, #FFFFFF, 26px, 0%)
+                }
+
+                .auth_link {
+                    @include text-style(1.4rem, 500, #FFFFFF, 120%, 0%);
+
+                    .auth_icon.dark {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+            }
+
+        }
+    }
+
+    .header__content {
+        width: 70%; // Ограничение ширины контента по центру
+        height: 100%;
+
+        
+
+        display: grid;
+
+        /* Определение именованных областей для наглядности верстки */
+        grid-template-areas: ". logo . nav . city . actions .";
+
+        /* 
+        Сетка по макету (Pixel Perfect):
+        gap(85) -> logo(144px) -> gap(19px) -> nav(max-content) -> gap(69px) -> city -> gap(29px) -> actions
+        */
+        grid-template-columns: 85px 144px 19px max-content 69px auto 29px auto ;
+
+        justify-self: center;
+        align-items: center;
+
+
+        // Привязка элементов к сетке
+        .logo {
+            grid-area: logo;
+        }
+        .nav_wrapper {
+            width: max-content;
+            grid-area: nav;
+        }
+        .city_selector_wrapper {
+            grid-area: city;
+        }
+        .header_actions {
+            grid-area: actions;
+        }
+
+        
+        .header_actions {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            .contact_us {
+                user-select: none;
+                width: auto;
+                white-space: nowrap;
+                @include text-style(1.6rem, 500, #00093C, 26px, 0%)
+            }
+
+            .auth_link {
+                display: inline-flex;
+                align-items: flex-end;
+                gap: 9px;
+                @include text-style(1.4rem, 500, #000000, 120%, 0%)
+            }
+        }
+    }
+
 }

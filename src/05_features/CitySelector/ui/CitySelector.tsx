@@ -43,13 +43,13 @@ export default function CitySelector({headerTheme='light'}: {headerTheme: 'dark'
     <div onClick={handleOpenModal} className={css.city_selector}>
       <div className={css.city_selector__content}>
         {/* Иконка локации с динамическими классами темы */}
-        <LocationIcon width={17} height={20} className={clsx(css.icon, css[headerTheme])}/>
+        <LocationIcon  className={clsx(css.icon, css[headerTheme])}/>
         {/* Название текущего города */}
         <span className={clsx(css.current_city, css[headerTheme])}>
           {currentCity?.name}
         </span>
         {/* Иконка-индикатор (стрелочка), которая поворачивается при открытии (через класс css.open) */}
-        <ModalOpenIcon width={8} height={8} className={clsx(css.icon, css.modal_icon, css[headerTheme], {[css.open]: isCitiesModal})}/>
+        <ModalOpenIcon width={13} height={13} className={clsx(css.icon, css.modal_icon, css[headerTheme], {[css.open]: isCitiesModal})}/>
       </div>
        {/* Модальное окно, в которое прокидываем список городов и обработчик выбора */}
       <CitiesModal isOpen={isCitiesModal} items={cities} onChangeCity={handleChangeSelectCity}/>

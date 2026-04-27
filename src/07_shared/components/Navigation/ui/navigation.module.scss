@@ -4,28 +4,38 @@
     width: 100%;
 
     // Основной список навигации
+    
     .navigation__list.header {
         display: flex;
         flex-direction: row;
-        column-gap: 4rem;
+        gap: 40px;
         align-items: center;
+        text-align: center;
+        
 
         // Светлая тема (Light Mode)
         &.light {
             .link {
+                display: inline-block;
+                
+                width: auto;
                 // Применяем миксин для базовых параметров текста
-                @include text-style(1.4rem, 450, #000000, 100%, 0%);
+                @include text-style(1.4rem, 500, #000000, 100%, 0);
             }
             .link_wrapper {
                 // Добавляем иконку перед первым пунктом меню
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                white-space: nowrap;
+                
                 &:first-child {
-                    display: flex;
-                    align-items: center;
-                    gap: 5px;
+                    
+                    
                     &::before {
                         content: url('@assets/nav-icon.svg');
                         width: 20px;
-                        height: 15px;
+                        height: 17px;
                     }
                 }
             }
@@ -34,10 +44,13 @@
           // Темная тема (Dark Mode)
         &.dark {
             .link {
+
                 @include text-style(1.4rem, 450, #FFFFFF, 100%, 0%);
             }
 
             .link_wrapper {
+                width: auto;
+                white-space: nowrap;
                 &:first-child {
                     display: flex;
                     align-items: center;

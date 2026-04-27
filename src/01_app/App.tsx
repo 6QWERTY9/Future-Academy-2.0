@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom"
 function App() {
   return (
     <BrowserRouter>
-      <Header theme='light'/>
+      <Header theme='dark'/>
     </BrowserRouter>
   )
 }

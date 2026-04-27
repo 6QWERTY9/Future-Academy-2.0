@@ -3,31 +3,45 @@
 
 .city_selector {
     max-width: 160px;
-    display: inline-flex;
+
     cursor: pointer;
 
     .city_selector__content {
         width: 100%;
-
-        display: inline-flex;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
         align-items: center;
-        gap: 8px;
+        
+        
 
         .current_city {
+            white-space: nowrap;
+            display: inline-block;
+            width: auto;
             user-select: none;
-            @include text-style(1.4rem, 500, #000000, 1);
+            @include text-style(1.4rem, 500, #000000, 100%, 0%);
             text-decoration: underline;
             &.dark {
-                @include text-style(1.4rem, 500, #fff, 1);
+                @include text-style(1.4rem, 500, #fff, 100%, 0%);
             }
         }
 
-        .icon.dark {
-            filter: brightness(0) invert(1);
+        .icon {
+            width: 15px;
+            height: 20px;
+            &.dark {
+                filter: brightness(0) invert(1);
+                
+            }
         }
+        
 
         .modal_icon {
             rotate: 179deg;
+            width: 10px;
+            height: 8px;
             transition: rotate 200ms ease-in;
             &.open {
                 rotate: 0deg;
