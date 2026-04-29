@@ -31,7 +31,6 @@ export default function CitySelector({headerTheme='light'}: {headerTheme: 'dark'
   const handleChangeSelectCity = (id: number) => {
     if (id !== selectCityId) {
       setSelectCityId(id);
-
       setIsCitiesModal(false)
     }
   }

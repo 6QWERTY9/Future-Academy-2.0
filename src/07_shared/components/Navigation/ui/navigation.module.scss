@@ -68,15 +68,16 @@
     }
 
     .navigation__list.footer {
+        white-space: nowrap;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        row-gap: 0.5rem;
+        row-gap: 0.2rem;
         .link {
             &.footer {
-                @include text-style(1.4rem, 400, #FFFFFF, 34px, 0%);
+                @include text-style(1.4rem, 400, rgba(189, 189, 189, 1), 34px, 0%);
             }
         }
     }
-
+    
 }
