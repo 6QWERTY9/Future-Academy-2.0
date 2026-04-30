@@ -11,6 +11,9 @@
     flex-direction: column;
     gap: 4.3rem;
 
+    .footer_logo {
+        filter: brightness(0) invert(1);
+    }
     .information {
         display: inline-flex;
         flex-direction: column;
