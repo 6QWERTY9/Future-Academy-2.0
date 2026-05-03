@@ -9,6 +9,7 @@
     border: 1px solid gray;
     border-radius: 6px;
     background: rgb(245, 245, 245);
+    z-index: 99;
 
     transform: translateY(45px) translateX(50%);
     .cities_modal__content {
