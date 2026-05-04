@@ -26,6 +26,10 @@
         &.left_tail {
             padding: 20px 25px 20px 45px;
         }
+
+        &.right_tail {
+            padding: 20px 25px 40px 25px; 
+        }
         .title {
             @include text-style(16px, 600, rgba(0, 0, 0, 1), 100%, 0%);
             margin-bottom: 2rem;

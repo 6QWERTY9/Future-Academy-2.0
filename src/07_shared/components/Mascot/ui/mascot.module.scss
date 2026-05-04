@@ -1,0 +1,43 @@
+
+.mascot {
+    width: fit-content;
+    display: inline-flex;
+    
+
+    .owl_container {
+    /**
+        * Используем CSS-переменные, передаваемые из React-компонента.
+        * Если переменная не задана, используется значение по умолчанию (0 или 1).
+    */
+    transform: 
+        translateY(var(--owl-offset-y, 0)) 
+        translateX(var(--owl-offset-x, 0)) 
+        scaleX(var(--owl-scale, 1));
+        
+        flex-shrink: 0; // Запрещаем сжимать контейнер с совой
+    }
+    
+    /**
+        * Позиция: Сова под облачком.
+    */
+    &.position_bottom {
+        flex-direction: column-reverse; // Облачко сверху, сова снизу
+        align-items: flex-start; // Выравнивание по левому краю
+    }
+
+    /**
+        * Позиция: Сова справа от облачка.
+    */
+    &.position_left {
+        flex-direction: row; // Стандартный порядок (облачко -> сова)
+        align-items: center; // Центрируем сову относительно текста
+    } 
+
+    /**
+        * Позиция: Сова слева от облачка.
+    */
+    &.position_right {
+        flex-direction: row-reverse; // Инвертируем порядок, чтобы сова была слева
+        align-items: flex-start; // Выравниваем по верхнему краю (по макету)
+    }
+}

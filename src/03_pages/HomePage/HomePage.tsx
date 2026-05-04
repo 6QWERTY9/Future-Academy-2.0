@@ -1,21 +1,30 @@
 import LayoutPage from "@widgets/LayoutPage/LayoutPage"
 import { HeroSection } from "./components/HeroSection/HeroSection"
-import { SpeechBubble } from "@shared/components/Mascot/ui/SpeechBubble"
+
+import { Mascot } from "@shared/components/Mascot"
 
 export const HomePage = () => {
     return (
         <LayoutPage headerTheme="light">
             <HeroSection/>
-            <div>
-                <SpeechBubble 
-                title="Кем вы хотите стать?"
-                children={<p>Пора найти себя и выбрать подходящий курс</p>}
-                footer={<footer><span>Удачи!</span></footer>}
-                maxWidth={'260px'}
-                tailPosition="bottom"
-                />
-                
-            </div>
+            <Mascot
+                position="bottom"
+                offsetX="-40px"
+                offsetY="-50px"
+                bubbleProps={{
+                    
+                    title: 'Кем вы хотите стать?',
+                    children: <p>Пора найти себя и выбрать подходящий курс</p>,
+                    footer: <span>Удачи!</span>,
+                    maxWidth: '260px'
+                    
+                }}
+
+                owlProps={{
+                    width: 168,
+                    className: 'owl'
+                }}
+            />
             
         </LayoutPage>
     )
