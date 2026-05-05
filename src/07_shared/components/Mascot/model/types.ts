@@ -28,7 +28,7 @@ export interface ISpeechBubbleProps {
         * Позволяет тексту не растягиваться слишком сильно.
     */
     maxWidth?: string | number;
-
+    height?: string | number;
     /** Дополнительные CSS-классы для внешней стилизации */
     className?: string;
     

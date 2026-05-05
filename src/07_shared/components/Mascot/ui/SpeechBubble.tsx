@@ -12,6 +12,7 @@ export const SpeechBubble: React.FC<ISpeechBubbleProps> = ({
     footer,
     children,
     maxWidth='260px',
+    height,
     className,
     tailPosition='bottom'
 }) => {
@@ -20,7 +21,8 @@ export const SpeechBubble: React.FC<ISpeechBubbleProps> = ({
             className={clsx(css.speech_bubble, className)}
             style={{
                 // Передаем ограничение ширины в CSS через переменную для гибкости
-                '--speech-bubble-max-width': maxWidth ? `${maxWidth}`: 'var(--speech-bubble-max-width)'
+                '--speech-bubble-max-width': maxWidth ? `${maxWidth}`: 'var(--speech-bubble-max-width)',
+                '--speech-bubble-height': height ? `${height}`: 'var(--speech-bubble-height)'
             }}
         >
             {/* Слой с SVG-фоном. Абсолютно позиционирован относительно обертки */}

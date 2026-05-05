@@ -7,6 +7,7 @@
     position: relative;
     max-width: var(--speech-bubble-max-width);
     width: fit-content;
+    height: var(--speech-bubble-height);
     .svg_content {
         position: absolute; // SVG теперь просто фон
         top: 0;
@@ -20,7 +21,8 @@
         position: relative; 
         z-index: 2;
         // Добавляем отступы, чтобы текст не касался рамок SVG
-        padding: 20px 25px 40px 25px; // Снизу больше места под хвостик
+        padding: 20px 25px 40px 20px;
+         // Снизу больше места под хвостик
         box-sizing: border-box;
         word-wrap: break-word; // Чтобы длинные слова не ломали верстку
         &.left_tail {
@@ -31,12 +33,14 @@
             padding: 20px 25px 40px 25px; 
         }
         .title {
-            @include text-style(16px, 600, rgba(0, 0, 0, 1), 100%, 0%);
+            @include text-style(16px, 600, rgba(0, 0, 0, 1), 120%, 0%);
             margin-bottom: 2rem;
         }
         .children, .footer {
             margin-bottom: 2rem;
-            @include text-style(15px, 400, rgba(0, 0, 0, 1), 100%, 0%);
+            @include text-style(16px, 500, rgba(0, 0, 0, 1), 125%, 0%);
+            
+            
         }
     }
 }

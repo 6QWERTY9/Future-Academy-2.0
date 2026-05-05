@@ -1,0 +1,45 @@
+@use '@styles/mixins' as *;
+@use '@styles/vars' as *;
+
+
+.tag {
+    background: rgba(255, 255, 255, 1);
+    display: inline-flex;
+    align-items: center;
+    max-width: 260px;
+    width: fit-content;
+    height: 50px;
+
+    @include text-style(1.4rem, 500, rgba(0, 0, 0, 1), 100%);
+
+    padding: 15px 19px 17px 19px;
+
+    @include shadow-gradient($gradient-orange-to-blue, 0px, 0px, 5px, 0px, 6px);
+
+    
+    &:hover {
+        @include shadow-gradient($gradient-orange-to-blue, 0px, -2px, 15px, 1px, 6px);
+    }
+}
+
+.filter_tags_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+     // Расстояние между рядами и колонками
+    max-width: 900px; // Важно ограничить ширину, чтобы они перепрыгивали
+    align-items: center;
+    gap: 17px 20px;
+    transform: translateX(-20px);
+
+    & > * {
+        // Делаем так, чтобы теги не были одной ширины
+        width: fit-content; 
+        margin-top: 10px;
+    }
+
+    // Смещаем четные строки или элементы для эффекта "шахматки"
+    & > *:nth-child(even) {
+        align-self: end;
+        margin-top: 5px;
+    }
+}

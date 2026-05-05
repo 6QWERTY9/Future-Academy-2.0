@@ -1,0 +1,57 @@
+@use '@styles/mixins' as *;
+@use '@styles/vars' as *;
+
+
+.tab_wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 17px;
+
+    width: max-content;
+    height: fit-content;
+
+    .tab_text {
+        display: flex;
+        flex-direction: column;
+        
+        text-align: left;
+        .title {
+            @include text-style(1.6rem, 700, rgba(0, 0, 0, 1), 150%)
+        }
+
+        .age {
+            @include text-style(1.2rem, 400, rgba(79, 79, 79, 1), 100%)
+        }
+    }
+}
+
+.category_tabs {
+    display: flex;
+    flex-direction: row;
+    gap: 160px;
+    width: fit-content;
+    height: auto;
+
+
+    position: relative;
+
+    padding: 14px 0px 14px 0px;
+
+    border-bottom: 1px solid Gray;
+
+    .moving_line {
+        position: absolute;
+        bottom: -1px; // Чтобы перекрывала границу wrapper
+        left: 0;
+        
+        height: 4px;
+        background: $gradient-orange-to-blue; // Твой акцентный цвет
+        
+        // Используем переменные, которые придут из JS
+        width: var(--line-width,0);
+        transform: translateX(var(--line-left, 0));
+        
+        // Плавность движения
+        transition: width 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}

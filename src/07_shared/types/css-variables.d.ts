@@ -10,6 +10,7 @@ declare module 'react' {
 
         /** Максимальная ширина текстового облачка (бабла) */
         '--speech-bubble-max-width'?: string;
+        '--speech-bubble-height'?: string;
 
         /** Вертикальное смещение иконки совы относительно базовой линии */
         '--owl-offset-y'?: string;
@@ -19,5 +20,8 @@ declare module 'react' {
 
         /** Масштабирование совы (используется для зеркального отображения через scaleX: -1) */
         '--owl-scale'?: string | number;
+
+        '--line-left'?: string;
+        '--line-width'?: string;
     }
 }

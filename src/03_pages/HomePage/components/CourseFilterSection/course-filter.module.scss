@@ -1,0 +1,21 @@
+.course_filter_section {
+    width: 100%;
+    height: 500px;
+    
+    .content {
+        
+        max-width: 1150px;
+        justify-self: center;
+        
+
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+        justify-items: center;
+
+        gap: 50px;
+        .mascot_course_filter {
+            transform: translateY(100px) translateX(-7px);
+        }
+    }
+}
