@@ -28,18 +28,19 @@
      // Расстояние между рядами и колонками
     max-width: 900px; // Важно ограничить ширину, чтобы они перепрыгивали
     align-items: center;
-    gap: 17px 20px;
+    row-gap: 16px;
+    column-gap: 22px;
     transform: translateX(-20px);
 
     & > * {
         // Делаем так, чтобы теги не были одной ширины
         width: fit-content; 
-        margin-top: 10px;
+        
     }
 
     // Смещаем четные строки или элементы для эффекта "шахматки"
     & > *:nth-child(even) {
         align-self: end;
-        margin-top: 5px;
+        
     }
 }

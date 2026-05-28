@@ -1,0 +1,35 @@
+.about_us__video_content {
+    width: 100%;
+    height: max-content;
+    position: relative;
+    padding-left: 26px;
+
+    display: grid;
+    
+    justify-content: center;
+    
+    background: transparent;
+    .decor {
+        position: absolute;
+        z-index: -1;
+    }
+
+    .cross {
+        right: 52px;
+        bottom: -157px;
+        
+    }
+    .triangle {
+        left: 128px;
+        top: -67px;
+    }
+
+    .line_one {
+        left: -42px;
+        bottom: 26px;
+    }
+    .line_two {
+        top: -57px;
+        right: -48px;
+    }
+}

@@ -1,0 +1,32 @@
+@use '@styles/mixins' as *;
+@use '@styles/vars' as *;
+
+// Основной контейнер карточки преимущества
+.advantage_card {
+    // Включение флексбокс-сетки для выравнивания элементов внутри карточки
+    display: flex;
+    flex-direction: column;
+    
+    // Убираем жесткую высоту всей карточки height: 140px, 
+    // чтобы она не сжимала элементы внутри.
+    max-width: max-content;
+    padding: 0;
+    .icon_wrapper {
+        height: 75px; 
+        
+        display: flex;
+        align-items: flex-end;
+        transform: translateY(-23px) translateX(2px);  // Прижимает цифры к нижней границе этого блока
+    }
+    
+    .description {
+        margin: 0;
+        display: inline-flex;
+        max-width: 250px;
+        height: 34px; 
+        align-items: flex-start;
+        padding-left: 1px;
+        
+        @include text-style(2rem, 500, #000000, 24px);
+    }
+}
